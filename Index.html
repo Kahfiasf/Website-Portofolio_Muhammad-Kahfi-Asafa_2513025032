@@ -1,0 +1,777 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portofolio - Muhammad Kahfi Asafa</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="tugas.css" />
+  </head>
+  <body>
+    <!-- Header Navigation -->
+    <header>
+      <div class="logo">
+        <span class="badge">Portofolio</span>
+        <span class="name">Muhammad Kahfi Asafa</span>
+      </div>
+      <nav>
+        <ul id="nav-list">
+          <li class="active" onclick="navigate('cover', this)">Home</li>
+          <li onclick="navigate('pendidikan', this)">Riwayat Pendidikan</li>
+          <li onclick="navigate('organisasi', this)">Riwayat Organisasi</li>
+          <li onclick="navigate('tugas', this)">Tugas</li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="main-container">
+      <!-- ═══ DEKORASI HALAMAN PENDIDIKAN (titik & cincin mengambang) ═══ -->
+      <div class="pend-deco dot a1"></div>
+      <div class="pend-deco dot a2"></div>
+      <div class="pend-deco dot a3"></div>
+      <div class="pend-deco dot a4"></div>
+      <div class="pend-deco dot a5"></div>
+      <div class="pend-deco ring ra1"></div>
+      <div class="pend-deco ring ra2"></div>
+      <div class="pend-deco ring dashed ra3"></div>
+      <div class="pend-deco dot b1"></div>
+      <div class="pend-deco dot b2"></div>
+      <div class="pend-deco dot b3"></div>
+      <div class="pend-deco dot b4"></div>
+      <div class="pend-deco dot b5"></div>
+      <div class="pend-deco ring rb1"></div>
+      <div class="pend-deco ring dashed rb2"></div>
+      <div class="pend-deco ring rb3"></div>
+      <!-- ═══════════════════════════════════════════════════════════════ -->
+
+      <!-- ═══ DEKORASI HALAMAN ORGANISASI (titik & cincin mengambang) ═══ -->
+      <div class="org-deco dot a1"></div>
+      <div class="org-deco dot a2"></div>
+      <div class="org-deco dot a3"></div>
+      <div class="org-deco dot a4"></div>
+      <div class="org-deco ring ra1"></div>
+      <div class="org-deco ring ra2"></div>
+      <div class="org-deco dot b1"></div>
+      <div class="org-deco dot b2"></div>
+      <div class="org-deco dot b3"></div>
+      <div class="org-deco dot b4"></div>
+      <div class="org-deco ring rb1"></div>
+      <div class="org-deco ring rb2"></div>
+      <div class="org-deco ring rb3"></div>
+      <!-- ════════════════════════════════════════════════════════════════ -->
+      <!-- PAGE: COVER -->
+      <section id="cover" class="page active cover-layout">
+        <div class="cover-text">
+          <h1>Portofolio</h1>
+          <h2>MUHAMMAD</h2>
+          <h2>KAHFI ASAFA</h2>
+          <button
+            class="btn-dark"
+            onclick="
+              navigate(
+                'home',
+                document.querySelector('#nav-list li:first-child'),
+              )
+            "
+          >
+            Ketahui lebih lanjut ➔
+          </button>
+        </div>
+        <div class="cover-image">
+          <!-- Ganti src dengan foto Anda -->
+          <img src="Foto Diri.png" alt="Kahfi" />
+        </div>
+        <!-- Decorative Lines -->
+        <div class="dec-line top-right"></div>
+        <div class="dec-line bottom-left"></div>
+      </section>
+
+      <!-- PAGE: HOME (Profil) -->
+      <section id="home" class="page home-layout">
+        <div class="profile-photo">
+          <img src="FOTO KAHFI.png" alt="Foto Kahfi" />
+        </div>
+        <div class="profile-info">
+          <h1 class="greeting">
+            <span class="highlight">Hai</span> Saya Kahfi
+          </h1>
+          <div class="info-box">
+            <p>
+              Saya Muhammad Kahfi Asafa, pemuda kelahiran 6 Januari 2008 asal
+              Poncowati, Terbanggi Besar, Lampung Tengah. Saat ini, saya sedang
+              menempuh studi sebagai mahasiswa Pendidikan Teknologi Informasi di
+              Universitas Lampung. Saya memiliki minat yang luas di dunia
+              teknologi, mulai dari eksplorasi logika sistem seperti algoritma
+              grafika komputer dan manajemen sistem operasi hingga sisi kreatif
+              seperti desain grafis dan pengembangan UI/UX. Saya antusias untuk
+              terus memadukan pemahaman teknis dengan kreativitas visual guna
+              menciptakan solusi teknologi yang fungsional dan menarik.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- PAGE: RIWAYAT PENDIDIKAN -->
+      <section id="pendidikan" class="page pendidikan-layout">
+        <div class="card-container">
+          <div class="edu-card fade-in">
+            <img src="TK.png" alt="TK PKK Poncowati" />
+            <h3>TK PKK<br />Poncowati</h3>
+            <button class="btn-light" onclick="openModal('modal-tk')">
+              Deskripsi
+            </button>
+            <a
+              href="https://www.google.com/maps?q=TK+PKK+Poncowati"
+              target="_blank"
+              class="btn-light"
+            >
+              Lokasi
+            </a>
+          </div>
+          <div class="edu-card fade-in delay-1">
+            <img src="SD.png" alt="SD Negeri 3 Poncowati" />
+            <h3>SD Negeri 3<br />Poncowati</h3>
+            <button class="btn-light" onclick="openModal('modal-sd')">
+              Deskripsi
+            </button>
+            <a
+              href="https://www.google.com/maps?q=SD+Negeri+3+Poncowati"
+              target="_blank"
+              class="btn-light"
+            >
+              Lokasi
+            </a>
+          </div>
+          <div class="edu-card fade-in delay-2">
+            <img src="SMP.png" alt="SMP Negeri 2 Terbanggi Besar" />
+            <h3>SMP Negeri 2<br />Terbanggi<br />Besar</h3>
+            <button class="btn-light" onclick="openModal('modal-smp')">
+              Deskripsi
+            </button>
+            <a
+              href="https://www.google.com/maps?q=SMP+Negeri+2+Terbanggi+Besar"
+              target="_blank"
+              class="btn-light"
+            >
+              Lokasi
+            </a>
+          </div>
+          <div class="edu-card fade-in delay-3">
+            <img src="SMA.png" alt="SMA Negeri 1 Terbanggi Besar" />
+            <h3>SMA Negeri 1<br />Terbanggi<br />Besar</h3>
+            <button class="btn-light" onclick="openModal('modal-sma')">
+              Deskripsi
+            </button>
+            <a
+              href="https://www.google.com/maps?q=SMA+Negeri+1+Terbanggi+Besar"
+              target="_blank"
+              class="btn-light"
+            >
+              Lokasi
+            </a>
+          </div>
+          <div class="edu-card fade-in delay-4">
+            <img src="KULIAH.png" alt="Universitas Lampung" />
+            <h3>Universitas<br />Lampung</h3>
+            <button class="btn-light" onclick="openModal('modal-unila')">
+              Deskripsi
+            </button>
+            <a
+              href="https://www.google.com/maps?q=Universitas+Lampung"
+              target="_blank"
+              class="btn-light"
+            >
+              Lokasi
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- PAGE: RIWAYAT ORGANISASI -->
+      <section id="organisasi" class="page organisasi-layout">
+        <div class="org-text">
+          <h2>Formatif</h2>
+          <ul>
+            <li>CO Perlengkapan LPJ Mubes</li>
+            <li>PJ Dokumentasi LokaKarya</li>
+            <li>Anggota PHDD Anniversary Formatif</li>
+            <li>Anggota PDD Impression X Specta</li>
+            <li>Ketua Pelaksana COMPEDIA LIDM 2026</li>
+          </ul>
+
+          <h2>HIMASAKTA</h2>
+          <ul>
+            <li>CO PHDD GAMUD</li>
+            <li>CO DESA BINAAN 2026</li>
+            <li>Anggota PDD Gempita 2026</li>
+            <li>PJ Dokumentasi Himasakta Sinergi</li>
+            <li>Anggota PDD KREASI 2026</li>
+          </ul>
+        </div>
+        <div class="org-images">
+          <img src="Organisasi 2.jpg" alt="Organisasi 1" class="img-tall" />
+          <div class="img-stack">
+            <img src="Organisasi 1.jpg" alt="Organisasi 2" />
+            <img src="Organisasi 3.jpeg" alt="Organisasi 3" />
+          </div>
+        </div>
+      </section>
+
+      <!-- PAGE: TUGAS -->
+      <section id="tugas" class="page">
+        <!-- DEKORASI HALAMAN TUGAS — di dalam section agar position:absolute relatif ke sini -->
+        <div class="tugas-deco ring-1"></div>
+        <div class="tugas-deco ring-2"></div>
+        <div class="tugas-deco ring-3"></div>
+        <div class="tugas-deco dot-1"></div>
+        <div class="tugas-deco dot-2"></div>
+        <div class="tugas-deco dot-3"></div>
+        <h2 class="section-title">PROGRES</h2>
+        <div class="progress-container">
+          <div class="progress-bar">
+            <span class="label">TUGAS</span>
+            <div class="bar-outer">
+              <div class="bar-inner" style="width: 100%"></div>
+            </div>
+            <span class="percent">100%</span>
+          </div>
+          <div class="progress-bar">
+            <span class="label">KUIS</span>
+            <div class="bar-outer">
+              <div class="bar-inner" style="width: 100%"></div>
+            </div>
+            <span class="percent">100%</span>
+          </div>
+          <div class="progress-bar">
+            <span class="label">PRAKTIKUM</span>
+            <div class="bar-outer">
+              <div class="bar-inner" style="width: 100%"></div>
+            </div>
+            <span class="percent">100%</span>
+          </div>
+        </div>
+
+        <h2 class="section-title">TUGAS GRAFIKA KOMPUTER</h2>
+        <div class="task-grid">
+          <div class="task-card">
+            <img src="TUGAS.jpg" alt="Task Icon" />
+            <h3>GK 01<br />2513025032</h3>
+            <a
+              href="https://forms.gle/YScmg9BfPGmUU1ux8"
+              target="_blank"
+              class="btn-light"
+              >Soal</a
+            >
+            <a
+              href="https://youtu.be/j6vNQTrMRdY"
+              target="_blank"
+              class="btn-light"
+              >Penjelasan</a
+            >
+          </div>
+          <div class="task-card">
+            <img src="TUGAS.jpg" alt="Task Icon" />
+            <h3>GK 02<br />2513025032</h3>
+            <a
+              href="https://forms.gle/rri5JSc89GGWZtKL6"
+              target="_blank"
+              class="btn-light"
+              >Soal</a
+            >
+            <a
+              href="https://youtu.be/-KP56hAJtmM"
+              target="_blank"
+              class="btn-light"
+              >Penjelasan</a
+            >
+          </div>
+          <div class="task-card">
+            <img src="TUGAS.jpg" alt="Task Icon" />
+            <h3>GK 03<br />2513025032</h3>
+            <a
+              href="https://forms.gle/RaVBLD3BFcx1D58x7"
+              target="_blank"
+              class="btn-light"
+              >Soal</a
+            >
+            <a
+              href="https://youtu.be/h9l6TiDtrI8"
+              target="_blank"
+              class="btn-light"
+              >Penjelasan</a
+            >
+          </div>
+          <div class="task-card">
+            <img src="TUGAS.jpg" alt="Task Icon" />
+            <h3>GK 04<br />2513025032</h3>
+            <a
+              href="https://forms.gle/MXPDouynpzAatXtf7"
+              target="_blank"
+              class="btn-light"
+              >Soal</a
+            >
+            <a
+              href="https://youtu.be/8dm0spBVNkY"
+              target="_blank"
+              class="btn-light"
+              >Penjelasan</a
+            >
+          </div>
+          <div class="task-card">
+            <img src="TUGAS.jpg" alt="Task Icon" />
+            <h3>GK 05<br />2513025032</h3>
+            <a
+              href="https://forms.gle/RcrkG1dXr3CvwmsV6"
+              target="_blank"
+              class="btn-light"
+              >Soal</a
+            >
+            <a
+              href="https://youtu.be/oR9YZYTAors"
+              target="_blank"
+              class="btn-light"
+              >Penjelasan</a
+            >
+          </div>
+        </div>
+
+        <h2 class="section-title">KUIS GRAFIKA KOMPUTER</h2>
+        <div class="task-grid kuis-grid">
+          <div class="task-card">
+            <img src="KUIS.jpg" alt="Quiz Icon" />
+            <h3>Kuis 1</h3>
+            <a
+              href="https://www.geogebra.org/calculator/bbgmywkn1"
+              target="_blank"
+              class="btn-light"
+              >Jawaban</a
+            >
+            <a
+              href="https://youtu.be/-f7kHLG9xTg"
+              target="_blank"
+              class="btn-light"
+              >Penjelasan</a
+            >
+          </div>
+          <div class="task-card">
+            <img src="KUIS.jpg" alt="Quiz Icon" />
+            <h3>Kuis 2</h3>
+            <a
+              href="https://www.geogebra.org/calculator/dbusmk2m"
+              target="_blank"
+              class="btn-light"
+              >Jawaban</a
+            >
+            <a
+              href="https://youtu.be/qYecdj8iqmg"
+              target="_blank"
+              class="btn-light"
+              >Penjelasan</a
+            >
+          </div>
+          <div class="task-card">
+            <img src="KUIS.jpg" alt="Quiz Icon" />
+            <h3>Kuis 3</h3>
+            <a
+              href="https://www.geogebra.org/calculator/hvksanpd"
+              target="_blank"
+              class="btn-light"
+              >Jawaban</a
+            >
+            <a
+              href="https://www.geogebra.org/calculator/rgfunfvw"
+              target="_blank"
+              class="btn-light"
+              >Jawaban 2</a
+            >
+            <a
+              href="https://youtu.be/b0S5qMOOJcQ"
+              target="_blank"
+              class="btn-light"
+              >Penjelasan</a
+            >
+          </div>
+          <div class="task-card">
+            <img src="KUIS.jpg" alt="Quiz Icon" />
+            <h3>Kuis 4</h3>
+            <a
+              href="https://www.geogebra.org/calculator/v3sxn3uy"
+              target="_blank"
+              class="btn-light"
+              >Jawaban</a
+            >
+            <a
+              href="https://youtu.be/d73J3FOE7h8"
+              target="_blank"
+              class="btn-light"
+              >Penjelasan</a
+            >
+          </div>
+        </div>
+
+        <h2 class="section-title">PRAKTIKUM GRAFIKA KOMPUTER</h2>
+        <div class="task-grid praktikum-grid">
+          <div class="task-card">
+            <img src="PRAKTIKUM.png" alt="Praktikum Icon" />
+            <h3>Praktikum 01</h3>
+            <a
+              href="https://drive.google.com/file/d/1Li9FkmgipHHKhz-8XBgHDu-3gzHNzWJa/view?usp=sharing"
+              target="_blank"
+              class="btn-light"
+              >Modul Praktikum</a
+            >
+            <a
+              href="https://drive.google.com/file/d/15FaNjmWqR0zu1jkm2PaXw5vBskqGmPd7/view?usp=sharing"
+              target="_blank"
+              class="btn-light"
+              >Hasil Praktikum</a
+            >
+          </div>
+          <div class="task-card">
+            <img src="PRAKTIKUM.png" alt="Praktikum Icon" />
+            <h3>Praktikum 02</h3>
+            <a
+              href="https://drive.google.com/file/d/1KApQ0-MCdbHnAG5hsgCK5gR3UM-HSh5n/view?usp=sharing"
+              target="_blank"
+              class="btn-light"
+              >Modul Praktikum</a
+            >
+            <a
+              href="https://drive.google.com/file/d/1CT_gHxN7HA_ue1Z-yGj8YvvbJttvXSod/view?usp=sharing"
+              target="_blank"
+              class="btn-light"
+              >Hasil Praktikum</a
+            >
+          </div>
+          <div class="task-card">
+            <img src="PRAKTIKUM.png" alt="Praktikum Icon" />
+            <h3>Praktikum 03</h3>
+            <a
+              href="https://drive.google.com/file/d/1aYGaSTR00DXhWp_AI_7-7t3UsGjcOni-/view?usp=sharing"
+              target="_blank"
+              class="btn-light"
+              >Modul Praktikum</a
+            >
+            <a
+              href="https://drive.google.com/file/d/1V6SX15mTEtLOqoEnN2yUD7_NFi5QR2hb/view?usp=sharing"
+              target="_blank"
+              class="btn-light"
+              >Hasil Praktikum</a
+            >
+          </div>
+          <div class="task-card">
+            <img src="PRAKTIKUM.png" alt="Praktikum Icon" />
+            <h3>Praktikum 04</h3>
+            <a
+              href="https://drive.google.com/file/d/1Y9VddKd5UbPOYUoBrhlSFKKWULbZEKjb/view?usp=sharing"
+              target="_blank"
+              class="btn-light"
+              >Modul Praktikum</a
+            >
+            <a
+              href="https://drive.google.com/file/d/1UH417jxcAHIOWeD0fLKFcED2d-LwQkjT/view?usp=sharing"
+              target="_blank"
+              class="btn-light"
+              >Hasil Praktikum</a
+            >
+          </div>
+          <div class="task-card">
+            <img src="PRAKTIKUM.png" alt="Praktikum Icon" />
+            <h3>Praktikum 05</h3>
+            <a
+              href="https://drive.google.com/file/d/1Yi1i1NqYDewC6SK59U7BEJvZDZPeEOmq/view?usp=sharing"
+              target="_blank"
+              class="btn-light"
+              >Modul Praktikum</a
+            >
+            <a
+              href="https://drive.google.com/file/d/1LkLgAl8Wa_kzsDcHaoTLf1-u2PFO7uz7/view?usp=sharing"
+              target="_blank"
+              class="btn-light"
+              >Hasil Praktikum</a
+            >
+          </div>
+          <div class="task-card">
+            <img src="PRAKTIKUM.png" alt="Praktikum Icon" />
+            <h3>Praktikum 06</h3>
+            <a
+              href="https://drive.google.com/file/d/174fnXvWv8fgvVZPJR2ORP2C6OeeoIOG6/view?usp=sharing"
+              target="_blank"
+              class="btn-light"
+              >Modul Praktikum</a
+            >
+            <a
+              href="https://drive.google.com/file/d/1cIvtqMgsTIb0yfm8sR28Rvb2VoJZLpXq/view?usp=sharing"
+              target="_blank"
+              class="btn-light"
+              >Hasil Praktikum</a
+            >
+          </div>
+          <div class="task-card">
+            <img src="PRAKTIKUM.png" alt="Praktikum Icon" />
+            <h3>Praktikum 07</h3>
+            <a
+              href="https://drive.google.com/file/d/1e6rmXXvIvoijHwHP9Va0mb56t5vElB2k/view?usp=sharing"
+              target="_blank"
+              class="btn-light"
+              >Modul Praktikum</a
+            >
+            <a
+              href="https://drive.google.com/file/d/1x7ycDET7gUWng1xwpYmWDyQEY_A4QivM/view?usp=sharing"
+              target="_blank"
+              class="btn-light"
+              >Hasil Praktikum</a
+            >
+          </div>
+          <div class="task-card">
+            <img src="PRAKTIKUM.png" alt="Praktikum Icon" />
+            <h3>Praktikum 08</h3>
+            <a
+              href="https://drive.google.com/file/d/1wrNl3C4hg1LZggxWnpOLn50AZI9TH-M0/view?usp=sharing"
+              target="_blank"
+              class="btn-light"
+              >Modul Praktikum</a
+            >
+            <a
+              href="https://drive.google.com/file/d/1gqXzZ1tgOrX072WI92sWrlr4-w0xASrn/view?usp=sharing"
+              target="_blank"
+              class="btn-light"
+              >Hasil Praktikum</a
+            >
+          </div>
+          <div class="task-card">
+            <img src="PRAKTIKUM.png" alt="Praktikum Icon" />
+            <h3>Praktikum 09</h3>
+            <a
+              href="https://drive.google.com/file/d/11NWAHp6d_Qn5bQhDHyi23CqThfL24FB4/view?usp=sharing"
+              target="_blank"
+              class="btn-light"
+              >Modul Praktikum</a
+            >
+            <a
+              href="https://drive.google.com/file/d/1N4UFvMQnuMWDoUF3B3KUYJyQsN2n7GVx/view?usp=sharing"
+              target="_blank"
+              class="btn-light"
+              >Hasil Praktikum</a
+            >
+          </div>
+          <div class="task-card">
+            <img src="PRAKTIKUM.png" alt="Praktikum Icon" />
+            <h3>Praktikum 10</h3>
+            <a
+              href="https://drive.google.com/file/d/18GePYvCPMoybzrz290FucC7pZTSsQQG6/view?usp=sharing"
+              target="_blank"
+              class="btn-light"
+              >Modul Praktikum</a
+            >
+            <a
+              href="https://drive.google.com/file/d/1F92RkUYZLUCMCVGgF7FfXkF2Ui-tSzcL/view?usp=sharing"
+              target="_blank"
+              class="btn-light"
+              >Hasil Praktikum</a
+            >
+          </div>
+          <div class="task-card">
+            <img src="PRAKTIKUM.png" alt="Praktikum Icon" />
+            <h3>Praktikum<br />Proyek Mandiri</h3>
+            <a
+              href="https://drive.google.com/file/d/19hsjSMhpZs8b06srolpDhLixZ2NA7N4q/view?usp=sharing"
+              target="_blank"
+              class="btn-light"
+              >Modul Praktikum</a
+            >
+            <a
+              href="https://kahfiasf.github.io/Praktikum_Website_Muhammad-Kahfi-Asafa_2513025032_2025B/"
+              target="_blank"
+              class="btn-light"
+              >Hasil Praktikum</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer Social Media -->
+    <footer>
+      <a
+        href="https://instagram.com/Kahfi_Asf"
+        target="_blank"
+        class="socmed-link"
+      >
+        <img src="ig.jpg" alt="IG" />
+        Kahfi_Asf
+      </a>
+      <a href="https://tiktok.com/@khf_asf" target="_blank" class="socmed-link">
+        <img src="tt.jpg" alt="TikTok" />
+        khf_asf
+      </a>
+      <a
+        href="https://www.linkedin.com/in/muhammad-kahfi-a-035458383"
+        target="_blank"
+        class="socmed-link"
+      >
+        <img src="linkin.jpg" alt="LinkedIn" />
+        Muhammad kahfi A
+      </a>
+      <a href="https://wa.me/6285009127221" target="_blank" class="socmed-link">
+        <img src="wa.jpg" alt="WA" />
+        085009127221
+      </a>
+      <a href="mailto:Mkahfi221@gmail.com" class="socmed-link">
+        <img src="Gmail.jpg" alt="Email" />
+        Mkahfi221@gmail.com
+      </a>
+    </footer>
+
+    <!-- MODALS UNTUK PENDIDIKAN -->
+    <div id="modal-tk" class="modal">
+      <div class="modal-content">
+        <h2>TK PKK Poncowati</h2>
+        <p>
+          Masa kecil di TK PKK Poncowati adalah fase di mana fondasi logika dan
+          kreativitas saya pertama kali terbentuk tanpa saya sadari. Lewat
+          permainan balok susun, puzzle, dan kebebasan berekspresi lewat buku
+          gambar, saya belajar tentang struktur, perpaduan warna, dan bagaimana
+          menyatukan kepingan-kepingan kecil menjadi sebuah bentuk yang utuh.
+          Meskipun saat itu belum ada layar komputer yang saya sentuh, kebiasaan
+          berimajinasi dan mencari pola dari hal-hal sederhana di sekitar saya
+          menjadi cikal bakal kepekaan visual dan kemampuan problem-solving.
+          Kemampuan dasar inilah yang di kemudian hari menjadi modal berharga
+          saya dalam merancang antarmuka (UI/UX) maupun memahami alur logika
+          pemrograman.
+        </p>
+        <button class="btn-dark mt-20" onclick="closeModal('modal-tk')">
+          ⬅ Kembali
+        </button>
+      </div>
+    </div>
+
+    <div id="modal-sd" class="modal">
+      <div class="modal-content">
+        <h2>SD Negeri 3 Poncowati</h2>
+        <p>
+          Gerbang ketakjuban saya terhadap dunia teknologi terbuka lebar saat
+          bersekolah di SD Negeri 3 Poncowati. Saya masih ingat betul
+          momen-momen awal berinteraksi dengan komputer sekolah; melihat
+          bagaimana kursor bergerak, mengetik teks, hingga mencoba aplikasi
+          menggambar sederhana. Apa yang awalnya sekadar rasa penasaran khas
+          anak-anak saat bermain game ringan, perlahan berubah menjadi
+          pertanyaan yang lebih kritis: "Bagaimana gambar-gambar ini bisa
+          bergerak di layar?" dan "Bagaimana mesin ini bisa mengerti apa yang
+          kita perintahkan?" Di masa inilah benih ketertarikan saya terhadap
+          teknologi informasi tertanam kuat, perlahan mengubah sudut pandang
+          saya dari sekadar penikmat (user) menjadi seseorang yang ingin tahu
+          rahasia di balik layar monitor.
+        </p>
+        <button class="btn-dark mt-20" onclick="closeModal('modal-sd')">
+          ⬅ Kembali
+        </button>
+      </div>
+    </div>
+
+    <div id="modal-smp" class="modal">
+      <div class="modal-content">
+        <h2>SMP Negeri 2 Terbanggi Besar</h2>
+
+        <p>
+          Memasuki masa remaja di SMP Negeri 2 Terbanggi Besar, interaksi saya
+          dengan teknologi menjadi jauh lebih intens dan terarah. Komputer bukan
+          lagi sekadar alat bermain, melainkan kanvas untuk berkreasi. Saya
+          mulai sering mendapat tugas membuat presentasi digital, mengeksplorasi
+          berbagai perangkat lunak baru, hingga berani mencoba memecahkan
+          masalah teknis (troubleshooting) sederhana ketika komputer mengalami
+          kendala. Di fase ini, saya mulai bereksperimen dengan elemen-elemen
+          grafis digital dan menyadari bahwa IT memiliki ruang lingkup yang luar
+          biasa luas. Ketertarikan yang tadinya hanya sebatas rasa kagum di masa
+          SD, kini mulai bertransformasi menjadi sebuah hobi yang serius dan
+          membentuk identitas diri saya di sekolah.
+        </p>
+        <div class="modal-tags">
+          <!-- Ganti tanda # dengan link website asli sekolahnya -->
+          <a
+            href="http://smpn2terbanggibesar.sch.id/"
+            target="_blank"
+            class="tag"
+            >SMP Negeri 2 Terbanggi Besar</a
+          >
+        </div>
+        <button class="btn-dark mt-20" onclick="closeModal('modal-smp')">
+          ⬅ Kembali
+        </button>
+      </div>
+    </div>
+
+    <div id="modal-sma" class="modal">
+      <div class="modal-content">
+        <h2>SMA Negeri 1 Terbanggi Besar</h2>
+        <p>
+          Masa putih abu-abu di SMA Negeri 1 Terbanggi Besar adalah titik balik
+          di mana visi saya untuk masa depan menjadi sangat jelas. Saya semakin
+          aktif mendalami dunia digital secara mandiri. Saya mulai akrab
+          menggunakan berbagai alat dan software desain, dan sering kali
+          dipercaya oleh teman-teman maupun guru ketika ada urusan terkait
+          visual, media presentasi, atau kendala IT. Saya mulai memahami bahwa
+          teknologi yang hebat harus diimbangi dengan desain yang komunikatif.
+          Rentetan pengalaman, eksplorasi tanpa henti, dan passion yang terus
+          menyala inilah yang membulatkan tekad saya: saya harus menjadikan
+          Teknologi Informasi sebagai jalur pendidikan tinggi dan karier
+          profesional saya kelak.
+        </p>
+        <div class="modal-tags">
+          <!-- Ganti tanda # dengan link website asli sekolahnya -->
+          <a href="https://www.smansa-gibes.sch.id/" target="_blank" class="tag"
+            >SMA Negeri 1 Terbanggi Besar</a
+          >
+        </div>
+        <button class="btn-dark mt-20" onclick="closeModal('modal-sma')">
+          ⬅ Kembali
+        </button>
+      </div>
+    </div>
+
+    <div id="modal-unila" class="modal">
+      <div class="modal-content">
+        <h2>Universitas Lampung</h2>
+        <p>
+          Semua perjalanan panjang dari masa kecil itu akhirnya bermuara di
+          Universitas Lampung. Sebagai mahasiswa Pendidikan Teknologi Informasi,
+          saya kini berada di wadah yang tepat untuk mengubah minat menjadi
+          keahlian profesional. Di sini, imajinasi visual dan logika komputasi
+          saya berpadu secara nyata. Saya tidak hanya mempelajari teori, tetapi
+          menyelam dalam ke hal-hal teknis seperti mengeksplorasi algoritma
+          grafika komputer tingkat rendah (low-level rendering), hingga
+          menganalisis manajemen proses dan penjadwalan pada sistem operasi. Di
+          sisi kreatif, saya secara aktif merancang usulan pembaruan UI/UX untuk
+          platform akademik VClass UNILA, serta memanfaatkan perangkat seperti
+          Canva, Affinity, hingga Ibis Paint X untuk menciptakan konten visual.
+          Saat ini, saya terbiasa mengelola proyek menggunakan platform seperti
+          GitHub. Fase ini adalah pembuktian bahwa IT bagi saya bukan lagi
+          sekadar hobi, melainkan dedikasi untuk menciptakan solusi teknologi
+          yang efisien sekaligus indah dipandang mata.
+        </p>
+        <div class="modal-tags">
+          <!-- Ganti tanda # dengan link website kampusnya -->
+          <a href="https://www.unila.ac.id/" target="_blank" class="tag"
+            >Universitas Lampung</a
+          >
+          <a href="https://fkip.unila.ac.id/" target="_blank" class="tag"
+            >Fakultas Keguruan dan Ilmu Pendidikan</a
+          >
+          <a href="https://pti.fkip.unila.ac.id/" target="_blank" class="tag"
+            >Pendidikan Teknologi Informasi</a
+          >
+        </div>
+        <button class="btn-dark mt-20" onclick="closeModal('modal-unila')">
+          ⬅ Kembali
+        </button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

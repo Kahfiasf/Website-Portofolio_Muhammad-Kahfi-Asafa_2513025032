@@ -1,0 +1,263 @@
+/* ==========================================================================
+   TUGAS.CSS — Khusus Page Tugas
+   Bekerja bersama style.css tanpa konflik.
+   Syarat: body:has(#tugas.active) .main-container pakai display:block (ada di style.css)
+   ========================================================================== */
+
+/* ══════════════════════════════════════════════════════════════════════════
+   1. LAYOUT UTAMA PAGE TUGAS
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/*
+   Saat tugas aktif, body:has(#tugas.active) .main-container di style.css
+   sudah di-switch ke display:block + overflow-y:auto.
+   Jadi #tugas tinggal tampil normal dari atas tanpa perlu height:100%.
+*/
+#tugas.page.active {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 100%;
+  /* Tinggi pasti = tinggi main-container, scroll ada di sini */
+  height: calc(100vh - 210px);
+  position: relative;
+  overflow-y: auto; /* SCROLL di sini */
+  overflow-x: hidden;
+  padding: 0;
+}
+
+/* Semua konten langsung di dalam #tugas harus di atas dekorasi */
+#tugas.page.active > *:not(.tugas-deco) {
+  position: relative;
+  z-index: 1;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   2. JUDUL SECTION
+   ══════════════════════════════════════════════════════════════════════════ */
+.section-title {
+  font-size: 1.6rem;
+  margin: 15px 0 10px;
+  text-transform: uppercase;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   3. PROGRESS BAR
+   ══════════════════════════════════════════════════════════════════════════ */
+.progress-container {
+  background: linear-gradient(90deg, #1f3438 0%, #152528 100%);
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid #555;
+  margin-bottom: 40px;
+}
+
+.progress-bar {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 10px 0;
+}
+
+.progress-bar .label {
+  width: 60px;
+  font-weight: 600;
+}
+
+.bar-outer {
+  flex: 1;
+  background-color: #ccc;
+  height: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.bar-inner {
+  background-color: var(--color-white);
+  height: 100%;
+  border-radius: 5px;
+}
+
+.progress-bar .percent {
+  width: 40px;
+  text-align: right;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   4. TASK GRID & CARD
+   ══════════════════════════════════════════════════════════════════════════ */
+.task-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.task-card {
+  width: 100%;
+  background: linear-gradient(180deg, #44565a 0%, #192a2d 100%);
+  border: 2px solid #888;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: var(--transition-smooth);
+}
+
+.task-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-accent);
+}
+
+.task-card img {
+  width: 80px;
+  margin: 0 auto 10px;
+  background: var(--color-white);
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.task-card h3 {
+  font-size: 14px;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.task-card .btn-light {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   5. DEKORASI — Lingkaran & Titik
+   Semua absolute relatif ke #tugas (position:relative di atas)
+   ══════════════════════════════════════════════════════════════════════════ */
+.tugas-deco {
+  display: none;
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Tampilkan hanya saat #tugas aktif */
+#tugas.page.active .tugas-deco {
+  display: block;
+}
+
+/* Lingkaran besar kiri atas */
+.tugas-deco.ring-1 {
+  width: 500px;
+  height: 500px;
+  top: -200px;
+  left: -180px;
+  border: 4px solid #9ddce0;
+  border-right: 4px dashed rgba(157, 220, 224, 0.3);
+  border-bottom: 4px solid transparent;
+  animation: tugasRotate 22s linear infinite;
+}
+
+/* Lingkaran sedang kanan bawah */
+.tugas-deco.ring-2 {
+  width: 380px;
+  height: 380px;
+  bottom: -140px;
+  right: -120px;
+  border: 3px solid rgba(26, 43, 47, 0.9);
+  border-left: 3px dashed #9ddce0;
+  border-top: 3px solid transparent;
+  animation: tugasRotate 18s linear infinite reverse;
+}
+
+/* Lingkaran kecil kanan atas */
+.tugas-deco.ring-3 {
+  width: 180px;
+  height: 180px;
+  top: 20px;
+  right: 60px;
+  border: 2px dashed rgba(157, 220, 224, 0.35);
+  animation: tugasRotate 12s linear infinite;
+}
+
+/* Titik 1 */
+.tugas-deco.dot-1 {
+  width: 12px;
+  height: 12px;
+  background: #9ddce0;
+  top: 80px;
+  left: 220px;
+  opacity: 0.7;
+  animation: tugasFloat 3s ease-in-out infinite alternate;
+}
+
+/* Titik 2 */
+.tugas-deco.dot-2 {
+  width: 9px;
+  height: 9px;
+  background: #9ddce0;
+  bottom: 100px;
+  left: 140px;
+  opacity: 0.5;
+  animation: tugasFloat 4s ease-in-out infinite alternate-reverse;
+}
+
+/* Titik 3 */
+.tugas-deco.dot-3 {
+  width: 16px;
+  height: 16px;
+  background: rgba(157, 220, 224, 0.25);
+  top: 45%;
+  right: 240px;
+  animation: tugasFloat 5s ease-in-out infinite alternate;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   6. KEYFRAMES
+   ══════════════════════════════════════════════════════════════════════════ */
+@keyframes tugasRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes tugasFloat {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-15px);
+  }
+}
+
+/* ── Hilangkan scrollbar tapi tetap bisa scroll ── */
+#tugas.page.active {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+#tugas.page.active::-webkit-scrollbar {
+  display: none;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   7. PRAKTIKUM GRID — 5 kolom tetap (5-5-1)
+   ══════════════════════════════════════════════════════════════════════════ */
+.praktikum-grid {
+  grid-template-columns: repeat(5, 1fr) !important;
+}
+
+/* Fix label PRAKTIKUM agar tidak terpotong */
+.progress-bar .label {
+  width: 80px;
+  min-width: 80px;
+  font-weight: 600;
+  white-space: nowrap;
+}
